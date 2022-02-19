@@ -4,7 +4,7 @@ import weatherForecastType from './weatherForecastType.js';
 import axios from 'axios';
 
 const query = new GraphQLObjectType({
-    name: 'query',
+    name: 'getForecastQuery',
     fields: () => ({
         weatherForecast: {
             type: weatherForecastType,
