@@ -2,22 +2,24 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
+    "start": "node src/index",
+    "dev": "nodemon src/index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "type": "module",
+  "type": "commonjs",
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.25.0",
-    "cors": "^2.8.5",
-    "express": "^4.17.2",
-    "express-graphql": "^0.12.0",
-    "graphql": "^16.3.0",
-    "nodemon": "^2.0.15"
+    "apollo-datasource-rest": "^0.11.0",
+    "apollo-server": "^3.0.0",
+    "graphql": "^15.5.1"
   },
   "devDependencies": {
-    "dotenv": "^16.0.0"
+    "dotenv": "^8.2.0",
+    "eslint": "^8.17.0",
+    "eslint-plugin-react": "^7.30.0",
+    "nodemon": "^2.0.4"
   }
 }
