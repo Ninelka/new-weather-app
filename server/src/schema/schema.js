@@ -21,6 +21,9 @@ const typeDefs = gql`
 
   type Sys {
     pod: String
+    country: String
+    sunrise: Int
+    sunset: Int
   }
 
   type Main {
@@ -33,7 +36,6 @@ const typeDefs = gql`
   }
 
   type WeatherListItem {
-    id: ID!
     main: String
     description: String
     icon: String
@@ -59,10 +61,8 @@ const typeDefs = gql`
 
   type CurrentWeather {
     id: ID!
-    dt: Int
-    dt_txt: String
-    city: City
-    weather: WeatherListItem
+    name: String
+    weather: WeatherListItem!
     main: Main
     wind: Wind
     clouds: Clouds

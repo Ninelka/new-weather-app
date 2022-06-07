@@ -13,7 +13,6 @@ const GET_WEEK_FORECAST = gql`
           temp
         }
         weather {
-          id
           main
           description
           icon
@@ -27,10 +26,8 @@ const GET_TODAY_WEATHER = gql`
   query getCurrentWeather($city: String!) {
     currentWeather(city: $city) {
       id
-      dt
-      dt_txt
-      city {
-        name
+      name
+      sys {
         country
         sunrise
         sunset
