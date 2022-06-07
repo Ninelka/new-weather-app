@@ -1,7 +1,8 @@
-const { gql } = require('apollo-server');
+const { gql } = require("apollo-server");
 
 const typeDefs = gql`
   type City {
+    id: ID!
     name: String!
     country: String
     timezone: Int
@@ -29,11 +30,10 @@ const typeDefs = gql`
     temp_max: Float
     pressure: Float
     humidity: Int
-    temp_f: Float
-    temp_c: Float
   }
 
   type WeatherListItem {
+    id: ID!
     main: String
     description: String
     icon: String
@@ -58,6 +58,7 @@ const typeDefs = gql`
   }
 
   type CurrentWeather {
+    id: ID!
     dt: Int
     dt_txt: String
     city: City
@@ -65,11 +66,12 @@ const typeDefs = gql`
     main: Main
     wind: Wind
     clouds: Clouds
+    sys: Sys
   }
 
   type Query {
-    forecast(city: String!): [Forecast!]!
-    currentWeather(city: String!): [CurrentWeather!]!
+    forecast(city: String!): Forecast!
+    currentWeather(city: String!): CurrentWeather!
   }
 `;
 
