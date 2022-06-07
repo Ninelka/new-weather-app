@@ -1,7 +1,8 @@
-const { ApolloServer } = require('apollo-server');
-const typeDefs = require('./schema/schema.js');
-const resolvers = require('./resolvers.js');
-const WeatherAPI = require('./datasources/weather-api.js');
+const { ApolloServer } = require("apollo-server");
+const typeDefs = require("./schema/schema.js");
+const resolvers = require("./resolvers.js");
+const WeatherAPI = require("./datasources/weather-api.js");
+require("dotenv").config();
 
 async function startApolloServer(typeDefs, resolvers) {
   const server = new ApolloServer({
@@ -14,7 +15,7 @@ async function startApolloServer(typeDefs, resolvers) {
     },
   });
 
-  const { url, port } = await server.listen({port: process.env.PORT || 4000});
+  const { url, port } = await server.listen({ port: process.env.PORT || 4000 });
   console.log(`
       🚀  Server is running
       🔉  Listening on port ${port}
