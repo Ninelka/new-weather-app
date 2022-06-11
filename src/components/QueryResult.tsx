@@ -1,11 +1,11 @@
-import React, { ReactChildren } from "react";
+import React, { ReactChild } from "react";
 import { ApolloError } from "@apollo/client";
 
 interface QueryResultProps {
   loading: boolean;
   error?: ApolloError;
   data: object;
-  children?: ReactChildren;
+  children?: ReactChild;
 }
 
 const QueryResult = ({
@@ -13,7 +13,7 @@ const QueryResult = ({
   error,
   data,
   children,
-}: QueryResultProps): any => {
+}: QueryResultProps): unknown => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>ERROR: {error}</p>;
 
