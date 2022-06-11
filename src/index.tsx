@@ -5,7 +5,7 @@ import App from "./App";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 
 const client = new ApolloClient({
-  uri: "http://localhost:4000/graphql",
+  uri: "https://ninel-weather-app-server.herokuapp.com/",
   cache: new InMemoryCache(),
 });
 
