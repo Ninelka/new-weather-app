@@ -13,7 +13,7 @@ const QueryResult = ({
   error,
   data,
   children,
-}: QueryResultProps): unknown => {
+}: QueryResultProps): any => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>ERROR: {error}</p>;
 

@@ -1,38 +1,23 @@
-import OneDayWeather from "./OneDayWeather";
+import React from "react";
+import { useQuery } from "@apollo/client";
+import { GET_WEEK_FORECAST } from "../queries/queries";
+import QueryResult from "./QueryResult";
+import { IQueryVariable, IWeekForecast } from "../interfaces";
 
-const WeekWeather = () => {
-    return (
-        <ul>
-            <li>
-                Sunday
-                <OneDayWeather/>
-            </li>
-            <li>
-                Monday
-                <OneDayWeather/>
-            </li>
-            <li>
-                Tuesday
-                <OneDayWeather/>
-            </li>
-            <li>
-                Wednesday
-                <OneDayWeather/>
-            </li>
-            <li>
-                Thursday
-                <OneDayWeather/>
-            </li>
-            <li>
-                Friday
-                <OneDayWeather/>
-            </li>
-            <li>
-                Saturday
-                <OneDayWeather/>
-            </li>
-        </ul>
-    )
-}
+const WeekWeather: React.FC<IQueryVariable> = ({ city }) => {
+  const { loading, error, data } = useQuery(GET_WEEK_FORECAST, {
+    variables: { city },
+  });
+
+  return (
+    <>
+      <QueryResult error={error} loading={loading} data={data}>
+        {data?.forecast?.map((item: IWeekForecast) => (
+          <p>{item}</p>
+        ))}
+      </QueryResult>
+    </>
+  );
+};
 
 export default WeekWeather;
