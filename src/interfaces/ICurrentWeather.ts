@@ -1,3 +1,5 @@
+import { ICurrentWeatherBase } from "./ICurrentWeatherBase";
+
 export interface ICurrentWeather {
   id: number;
   name: string;
@@ -6,11 +8,7 @@ export interface ICurrentWeather {
     sunrise: number;
     sunset: number;
   };
-  weather: {
-    main: string;
-    description: string;
-    icon: string;
-  };
+  weather: ICurrentWeatherBase[];
   main: {
     temp: number;
     feels_like: number;
