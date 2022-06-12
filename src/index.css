@@ -1,3 +1,47 @@
+@import url('/src/fonts/stylesheet.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply: font-display text-title-large;
+  }
+  h2 {
+    @apply: font-display text-title-1;
+  }
+  h3 {
+    @apply: font-display text-title-2;
+  }
+  h4 {
+    @apply: font-display text-title-3;
+  }
+  h5 {
+    @apply: font-text text-headline;
+  }
+
+  .caption-1 {
+    @apply: font-text text-caption1;
+  }
+
+  .caption-2 {
+    @apply: font-text text-caption2;
+  }
+
+  .footnote {
+    @apply: font-text text-footnote;
+  }
+
+  .subheadline {
+    @apply: font-text text-subheadline;
+  }
+
+  .callout {
+    @apply: font-text text-callout;
+  }
+
+  .body {
+    @apply: font-text text-body;
+  }
+}
