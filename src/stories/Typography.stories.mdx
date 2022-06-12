@@ -1,0 +1,79 @@
+import { Meta, Typeset } from '@storybook/addon-docs/blocks'
+
+<Meta title="Typography" />
+
+export const typography = {
+  type: {
+    text: '"SF Pro Text", Arial, sans-serif',
+    display: '"SF Pro Display", Arial, sans-serif',
+  },
+  weight: {
+    normal: '400',
+    medium: '500',
+    semibold: '600',
+    bold: '700',
+  },
+  size: {
+    caption2: 11,
+    caption1: 12,
+    footnote: 13,
+    subheadline: 15,
+    callout: 16,
+    body: 17,
+    headline: 17,
+    title3: 20,
+    title2: 22,
+    title1: 28,
+    largeTitle: 34,
+  },
+};
+
+export const SampleText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
+
+# Typography
+
+**Font:** SF Pro Regular
+
+**Weights:** 400(normal), 500(medium)
+
+<Typeset
+  fontSizes={[
+    Number(typography.size.caption2),
+    Number(typography.size.caption1),
+    Number(typography.size.footnote),
+    Number(typography.size.subheadline),
+    Number(typography.size.callout),
+    Number(typography.size.body),
+    Number(typography.size.headline),
+    Number(typography.size.title3),
+    Number(typography.size.title2),
+    Number(typography.size.title1),
+    Number(typography.size.largeTitle),
+  ]}
+  fontWeight={typography.weight.normal}
+  sampleText={SampleText}
+  fontFamily={typography.type.text}
+/>
+
+**Font:** SF Pro Bold
+
+**Weights:** 600(semibold), 700(bold)
+
+<Typeset
+  fontSizes={[
+    Number(typography.size.caption2),
+    Number(typography.size.caption1),
+    Number(typography.size.footnote),
+    Number(typography.size.subheadline),
+    Number(typography.size.callout),
+    Number(typography.size.body),
+    Number(typography.size.headline),
+    Number(typography.size.title3),
+    Number(typography.size.title2),
+    Number(typography.size.title1),
+    Number(typography.size.largeTitle),
+  ]}
+  fontWeight={typography.weight.semibold}
+  sampleText={SampleText}
+  fontFamily={typography.type.display}
+/>
