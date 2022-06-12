@@ -21,27 +21,43 @@
     @apply: font-text text-headline;
   }
 
-  .caption-1 {
-    @apply: font-text text-caption1;
+  /* Regular font styles */
+  .regular-caption-1 {
+    @apply: font-text text-caption1 font-regular;
+  }
+  .regular-caption-2 {
+    @apply: font-text text-caption2 font-regular;
+  }
+  .regular-footnote {
+    @apply: font-text text-footnote font-regular;
+  }
+  .regular-subheadline {
+    @apply: font-text text-subheadline font-regular;
+  }
+  .regular-callout {
+    @apply: font-text text-callout font-regular;
+  }
+  .regular-body {
+    @apply: font-text text-body font-regular;
   }
 
-  .caption-2 {
-    @apply: font-text text-caption2;
+  /* Bold font styles */
+  .bold-caption-1 {
+    @apply: font-text text-caption1 font-semibold;
   }
-
-  .footnote {
-    @apply: font-text text-footnote;
+  .bold-caption-2 {
+    @apply: font-text text-caption2 font-medium;
   }
-
-  .subheadline {
-    @apply: font-text text-subheadline;
+  .bold-footnote {
+    @apply: font-text text-footnote font-semibold;
   }
-
-  .callout {
-    @apply: font-text text-callout;
+  .bold-subheadline {
+    @apply: font-text text-subheadline font-semibold;
   }
-
-  .body {
-    @apply: font-text text-body;
+  .bold-callout {
+    @apply: font-text text-callout font-semibold;
+  }
+  .bold-body {
+    @apply: font-text text-body font-semibold;
   }
 }
