@@ -8,25 +8,25 @@ function App() {
   const [showCurrentWeather, setshowCurrentWeather] = React.useState(false);
   const [showForecast, setShowForecast] = React.useState(false);
 
-  const getTodayWeather = () => {
-    setshowCurrentWeather(true);
-  };
-
+  // const getTodayWeather = () => {
+  //   setshowCurrentWeather(true);
+  // };
+  //
   // const getForecast = () => {
   //   setShowForecast(true);
   // };
 
-  // const getWeather = () => {
-  //   setshowCurrentWeather(true);
-  //   setShowForecast(true);
-  // };
+  const getWeather = () => {
+    setshowCurrentWeather(true);
+    setShowForecast(true);
+  };
 
   return (
     <>
       <div>
         <label>Enter your city:</label>
         <input type="text" onChange={(e) => setCity(e.target.value)} />
-        <button type="submit" onClick={getTodayWeather}>
+        <button type="submit" onClick={getWeather}>
           Get weather
         </button>
       </div>
