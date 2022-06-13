@@ -17,7 +17,7 @@ const TodayWeather: React.FC<IQueryVariable> = ({ city }) => {
   return (
     <>
       <QueryResult error={error} loading={loading} data={data}>
-        {currentWeather && <OneDayWeather {...currentWeather} />}
+        <OneDayWeather {...currentWeather} />
       </QueryResult>
     </>
   );
