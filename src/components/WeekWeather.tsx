@@ -17,17 +17,19 @@ const WeekWeather: React.FC<IQueryVariable> = ({ city }) => {
   return (
     <>
       <QueryResult error={error} loading={loading} data={data}>
-        {weekWeather &&
-          weekWeather.list.map((day: any) => {
-            return (
-              <HourlyForecastItem
-                key={day.dt.toString()}
-                date={day.dt_txt}
-                icon={day.weather[0].icon}
-                temperature={day.main.temp}
-              />
-            );
-          })}
+        <div className="flex gap-[20px]">
+          {weekWeather &&
+            weekWeather.list.map((day: any) => {
+              return (
+                <HourlyForecastItem
+                  key={day.dt.toString()}
+                  date={day.dt_txt}
+                  icon={day.weather[0].icon}
+                  temperature={day.main.temp}
+                />
+              );
+            })}
+        </div>
       </QueryResult>
     </>
   );
