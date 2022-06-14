@@ -6,7 +6,7 @@
 </g>
 </g>
 <defs>
-<filter id="filter0_f_7_10945" x="16" y="24" width="361.345" height="229" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_f_7_10945" x="-4" y="4" width="401.345" height="269" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
 <feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_7_10945"/>
