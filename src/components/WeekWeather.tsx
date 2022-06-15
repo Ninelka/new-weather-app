@@ -19,7 +19,7 @@ const WeekWeather: React.FC<IQueryVariable> = ({ city }) => {
       <QueryResult error={error} loading={loading} data={data}>
         <div className="flex gap-[20px]">
           {weekWeather &&
-            weekWeather.list.map((day: any) => {
+            weekWeather.list.slice(0, 8).map((day: any) => {
               return (
                 <HourlyForecastItem
                   key={day.dt.toString()}
