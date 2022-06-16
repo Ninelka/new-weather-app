@@ -12,8 +12,6 @@ const WeekWeather: React.FC<IQueryVariable> = ({ city }) => {
 
   const weekWeather = data?.forecast;
 
-  console.log(weekWeather);
-
   return (
     <>
       <QueryResult error={error} loading={loading} data={data}>
