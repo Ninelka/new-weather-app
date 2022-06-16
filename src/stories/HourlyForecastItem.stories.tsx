@@ -22,7 +22,7 @@ const Template: ComponentStory<typeof HourlyForecastItem> = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  date: "12 AM",
+  date: "2022-06-17 18:00:00",
   icon: "04d",
   temperature: 20.06,
 };
@@ -30,8 +30,9 @@ Default.parameters = { ...defaultStoryParams };
 
 export const Active = Template.bind({});
 Active.args = {
-  date: "Now",
+  date: "2022-06-17 18:00:00",
   icon: "10d",
+  pop: 0.35,
   temperature: 15.78,
   isActive: true,
 };

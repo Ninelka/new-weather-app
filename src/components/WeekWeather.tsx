@@ -26,6 +26,7 @@ const WeekWeather: React.FC<IQueryVariable> = ({ city }) => {
                   date={day.dt_txt}
                   icon={day.weather[0].icon}
                   temperature={day.main.temp}
+                  pop={day.pop}
                 />
               );
             })}

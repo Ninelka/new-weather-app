@@ -17,6 +17,7 @@ const GET_WEEK_FORECAST = gql`
           description
           icon
         }
+        pop
       }
     }
   }

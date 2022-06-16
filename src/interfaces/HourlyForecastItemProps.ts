@@ -3,4 +3,5 @@ export interface HourlyForecastItemProps {
   icon: string;
   temperature: number;
   isActive?: boolean;
+  pop?: number;
 }
