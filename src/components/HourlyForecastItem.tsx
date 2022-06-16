@@ -9,7 +9,7 @@ const HourlyForecastItem: React.FC<HourlyForecastItemProps> = (props) => {
   const formatDate = dayjs(date).format("h A");
   const percentOfPrecipitation = () => {
     if (pop && pop > 0) {
-      return pop * 100 + "%";
+      return Number(pop * 100).toFixed() + "%";
     }
   };
 
@@ -18,7 +18,7 @@ const HourlyForecastItem: React.FC<HourlyForecastItemProps> = (props) => {
       <span className="bold-subheadline text-dark-primary">{formatDate}</span>
       <div className="flex flex-col items-center">
         <Icon width={32} height={32} path={`assets/images/${icon}.svg`} />
-        <span className="bold-footnote text-accent">
+        <span className="bold-footnote h-[18px] text-accent">
           {percentOfPrecipitation()}
         </span>
       </div>
