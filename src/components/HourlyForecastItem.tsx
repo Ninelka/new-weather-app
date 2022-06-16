@@ -14,7 +14,7 @@ const HourlyForecastItem: React.FC<HourlyForecastItemProps> = (props) => {
   };
 
   return (
-    <div className="bg-['rgba(72, 49, 157, .2)'] shadow-1 flex min-w-[60px] flex-col items-center justify-between gap-3 rounded-[30px] py-4 px-2">
+    <div className="bg-['rgba(72, 49, 157, .2)'] shadow-1 flex w-max min-w-[60px] flex-col items-center justify-between gap-3 rounded-[30px] py-4 px-2">
       <span className="bold-subheadline text-dark-primary">{formatDate}</span>
       <div className="flex flex-col items-center">
         <Icon
