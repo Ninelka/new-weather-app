@@ -154,6 +154,10 @@
     box-shadow: 5px 4px 10px rgba(0, 0, 0, .25), inset 1px 1px 0 rgba(255, 255, 255, .25);
   }
 
+  .shadow-2 {
+    box-shadow: 40px 60px 150px rgba(59, 38, 123, 0.7);
+  }
+
   .shadow-input {
     box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
   }
