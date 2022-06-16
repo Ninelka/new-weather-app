@@ -17,7 +17,12 @@ const HourlyForecastItem: React.FC<HourlyForecastItemProps> = (props) => {
     <div className="bg-['rgba(72, 49, 157, .2)'] shadow-1 flex min-w-[60px] flex-col items-center justify-between gap-3 rounded-[30px] py-4 px-2">
       <span className="bold-subheadline text-dark-primary">{formatDate}</span>
       <div className="flex flex-col items-center">
-        <Icon width={32} height={32} path={`assets/images/${icon}.svg`} />
+        <Icon
+          className="shrink-0"
+          width={32}
+          height={32}
+          path={`assets/images/${icon}.svg`}
+        />
         <span className="bold-footnote h-[18px] text-accent">
           {percentOfPrecipitation()}
         </span>
