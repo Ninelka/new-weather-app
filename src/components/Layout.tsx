@@ -1,7 +1,11 @@
 import React from "react";
 
 const Layout: React.FC = ({ children }) => {
-  return <div className="bg-main-img h-screen w-screen p-8">{children}</div>;
+  return (
+    <div className="bg-radial row-span-1 grid h-screen w-screen grid-cols-3 gap-x-10">
+      {children}
+    </div>
+  );
 };
 
 export default Layout;
