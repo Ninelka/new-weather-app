@@ -10,6 +10,7 @@ module.exports = {
       "dark-secondary": "rgba(235, 235, 245, .6)",
       "dark-tertiary": "rgba(235, 235, 245, .3)",
       "dark-quaternary": "rgba(235, 235, 245, .18)",
+      accent: "#40CBD8",
       solid: {
         1: "#48319D",
         2: "#1F1D47",
