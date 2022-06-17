@@ -8,6 +8,7 @@ function App() {
   const [city, setCity] = React.useState("");
   const [showCurrentWeather, setshowCurrentWeather] = React.useState(false);
   const [showForecast, setShowForecast] = React.useState(false);
+  const popularCities = ["Montreal", "Toronto", "Tokyo", "Moscow", "Berlin"];
 
   // const getTodayWeather = () => {
   //   setshowCurrentWeather(true);
@@ -44,7 +45,12 @@ function App() {
           {showForecast && <WeekWeather city={city} />}
         </div>
         <div className="shadow-2 col-start-2 m-8 rounded-[44px] border border-dashed border-[#7B61FF] p-5"></div>
-        <div className="shadow-2 col-start-3 m-8 rounded-[44px] border border-dashed border-[#7B61FF] p-5"></div>
+        <div className="shadow-2 col-start-3 m-8 overflow-y-auto rounded-[44px] border border-dashed border-[#7B61FF] p-5">
+          {showCurrentWeather &&
+            popularCities.map((popularCity) => {
+              return <TodayWeather city={popularCity} />;
+            })}
+        </div>
       </Layout>
     </>
   );
