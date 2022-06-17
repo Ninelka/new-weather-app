@@ -5,3 +5,4 @@ export type { IWeekForecast } from "./IWeekForecast";
 export type { IWeekForecastList } from "./IWeekForecastList";
 export type { HourlyForecastItemProps } from "./HourlyForecastItemProps";
 export type { CurrentWeatherDetailsItemProps } from "./CurrentWeatherDetailsItemProps";
+export type { WeatherWidgetProps } from "./WeatherWidgetProps";

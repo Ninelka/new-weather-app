@@ -32,6 +32,9 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, #612FAB -90.71deg, rgba(97, 47, 171, 0) 50.02deg, #612FAB 129.55deg, rgba(97, 47, 171, 0) 226.06deg, #612FAB 269.29deg, rgba(97, 47, 171, 0) 410.02deg)",
       },
     },
+    backgroundImage: {
+      widget: "url('/public/assets/images/widget-bg.svg')",
+    },
     fontFamily: {
       text: ["SF-Pro-Text", "sans-serif"],
       display: ["SF-Pro-Display", "sans-serif"],
