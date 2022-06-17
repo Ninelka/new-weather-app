@@ -23,14 +23,14 @@ const Template: ComponentStory<typeof CurrentWeatherDetailsItem> = (args) => {
 export const Default = Template.bind({});
 Default.args = {
   title: "Sunrise",
-  value: "19",
+  value: "20°",
 };
 Default.parameters = { ...defaultStoryParams };
 
 export const WithDescription = Template.bind({});
 WithDescription.args = {
   title: "Feels like",
-  value: "19",
+  value: "20°",
   description: "Some text",
 };
 WithDescription.parameters = { ...defaultStoryParams };

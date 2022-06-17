@@ -14,8 +14,8 @@ export const Default = Template.bind({});
 Default.args = {
   city: "Toronto, Canada",
   icon: "04n",
-  temp: "20°",
-  temp_min: "18°",
-  temp_max: "24°",
+  temp: "20",
+  temp_min: "18",
+  temp_max: "24",
   weather_description: "Fast Wind",
 };
