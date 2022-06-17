@@ -2,9 +2,10 @@ import React from "react";
 import { HourlyForecastItemProps } from "../interfaces";
 import { Icon } from "./Icon";
 import dayjs from "dayjs";
+import classNames from "classnames";
 
 const HourlyForecastItem: React.FC<HourlyForecastItemProps> = (props) => {
-  const { date, icon, pop, temperature } = props;
+  const { date, icon, pop, temperature, isActive } = props;
 
   const formatDate = dayjs(date).format("h A");
   const percentOfPrecipitation = () => {
@@ -13,8 +14,16 @@ const HourlyForecastItem: React.FC<HourlyForecastItemProps> = (props) => {
     }
   };
 
+  const containerClassName = classNames(
+    "flex w-max min-w-[60px] flex-col items-center justify-between gap-3 rounded-[30px] py-4 px-2 bg-solid-1 shadow-1",
+    {
+      "border border-solid border-dark-primary border-opacity-20": isActive,
+      "bg-opacity-20": !isActive,
+    }
+  );
+
   return (
-    <div className="bg-['rgba(72, 49, 157, .2)'] shadow-1 flex w-max min-w-[60px] flex-col items-center justify-between gap-3 rounded-[30px] py-4 px-2">
+    <div className={containerClassName}>
       <span className="bold-subheadline text-dark-primary">{formatDate}</span>
       <div className="flex flex-col items-center">
         <Icon
