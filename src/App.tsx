@@ -3,6 +3,7 @@ import TodayWeather from "./components/TodayWeather";
 import WeekWeather from "./components/WeekWeather";
 import Layout from "./components/Layout";
 import Input from "./components/Input";
+import TodayWeatherCities from "./components/TodayWeatherCities";
 
 function App() {
   const [city, setCity] = React.useState("");
@@ -26,7 +27,15 @@ function App() {
   return (
     <>
       <Layout>
-        <div className="shadow-2 col-start-1 m-8 flex flex-col justify-between gap-5 rounded-[44px] border border-dashed border-[#7B61FF] p-5">
+        <div className="shadow-2 col-start-1 m-8 flex flex-col justify-between gap-5 rounded-[44px] border border-dashed border-[#7B61FF] bg-main bg-cover bg-bottom bg-no-repeat p-5">
+          {showCurrentWeather && (
+            <div className="flex flex-1 items-center justify-center">
+              <TodayWeather city={city} />
+            </div>
+          )}
+          {showForecast && <WeekWeather city={city} />}
+        </div>
+        <div className="shadow-2 col-start-2 m-8 rounded-[44px] border border-dashed border-[#7B61FF] p-5">
           <div className="flex justify-between gap-6">
             <Input
               label="Enter your city:"
@@ -41,14 +50,13 @@ function App() {
               Get weather
             </button>
           </div>
-          {showCurrentWeather && <TodayWeather city={city} />}
-          {showForecast && <WeekWeather city={city} />}
         </div>
-        <div className="shadow-2 col-start-2 m-8 rounded-[44px] border border-dashed border-[#7B61FF] p-5"></div>
         <div className="shadow-2 col-start-3 m-8 overflow-y-auto rounded-[44px] border border-dashed border-[#7B61FF] p-5">
           {showCurrentWeather &&
             popularCities.map((popularCity) => {
-              return <TodayWeather key={popularCity} city={popularCity} />;
+              return (
+                <TodayWeatherCities key={popularCity} city={popularCity} />
+              );
             })}
         </div>
       </Layout>
