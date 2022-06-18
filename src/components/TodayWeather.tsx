@@ -3,7 +3,7 @@ import { useQuery } from "@apollo/client";
 import { GET_TODAY_WEATHER } from "../queries/queries";
 import QueryResult from "./QueryResult";
 import { IQueryVariable } from "../interfaces";
-import OneDayWeather from "./OneDayWeather";
+import WeatherWidget from "./WeatherWidget";
 
 const TodayWeather: React.FC<IQueryVariable> = ({ city }) => {
   const { loading, error, data } = useQuery(GET_TODAY_WEATHER, {
@@ -17,7 +17,7 @@ const TodayWeather: React.FC<IQueryVariable> = ({ city }) => {
   return (
     <>
       <QueryResult error={error} loading={loading} data={data}>
-        <OneDayWeather {...currentWeather} />
+        <WeatherWidget data={currentWeather} />
       </QueryResult>
     </>
   );

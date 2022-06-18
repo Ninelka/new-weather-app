@@ -1,8 +1,19 @@
 export interface WeatherWidgetProps {
-  city: string;
-  icon: string;
-  temp: string;
-  temp_min: string;
-  temp_max: string;
-  weather_description: string;
+  data: {
+    name: string;
+    sys: {
+      country: string;
+    };
+    main: {
+      temp: number;
+      temp_min: number;
+      temp_max: number;
+    };
+    weather: [
+      {
+        description: string;
+        icon: string;
+      }
+    ];
+  };
 }

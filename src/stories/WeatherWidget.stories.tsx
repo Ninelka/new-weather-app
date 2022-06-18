@@ -12,10 +12,21 @@ const Template: ComponentStory<typeof WeatherWidget> = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  city: "Toronto, Canada",
-  icon: "04n",
-  temp: "20",
-  temp_min: "18",
-  temp_max: "24",
-  weather_description: "Fast Wind",
+  data: {
+    name: "Toronto",
+    sys: {
+      country: "Canada",
+    },
+    main: {
+      temp: 20,
+      temp_min: 18,
+      temp_max: 24,
+    },
+    weather: [
+      {
+        description: "Fast Wind",
+        icon: "04n",
+      },
+    ],
+  },
 };
