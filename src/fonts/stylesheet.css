@@ -1,4 +1,9 @@
 @font-face {
+  font-family: "SF-Pro-Display-Thin";
+  src: url("SF-Pro-Display-Thin.otf") format("otf");
+}
+
+@font-face {
   font-family: "SF-Pro-Display-Regular";
   src: url("SF-Pro-Display-Regular.otf") format("otf");
 }
