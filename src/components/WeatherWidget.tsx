@@ -7,7 +7,7 @@ const WeatherWidget: React.FC<WeatherWidgetProps> = ({ data }) => {
   return (
     <div className="h-auto w-[22rem] bg-widget bg-contain bg-bottom bg-no-repeat p-5">
       <div className="flex items-end justify-between">
-        <h1 className="text-title-super text-dark-primary">
+        <h1 className="text-title-large-2 text-dark-primary">
           {data.main.temp.toFixed()}&deg;
         </h1>
         <Icon
