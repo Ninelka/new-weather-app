@@ -48,7 +48,7 @@ function App() {
         <div className="shadow-2 col-start-3 m-8 overflow-y-auto rounded-[44px] border border-dashed border-[#7B61FF] p-5">
           {showCurrentWeather &&
             popularCities.map((popularCity) => {
-              return <TodayWeather city={popularCity} />;
+              return <TodayWeather key={popularCity} city={popularCity} />;
             })}
         </div>
       </Layout>
