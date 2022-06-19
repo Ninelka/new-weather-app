@@ -9,7 +9,7 @@ const CurrentWeatherCommon: React.FC<WeatherWidgetProps> = ({ data }) => {
       <h1 className="text-title-large-1 font-thin text-dark-primary">
         {data.main.temp.toFixed()}&deg;
       </h1>
-      <div>
+      <div className="flex flex-col items-center">
         <div className="regular-title-3 text-dark-secondary">
           {stringToCapitalize(data.weather[0].description)}
         </div>
