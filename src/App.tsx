@@ -29,7 +29,7 @@ function App() {
       <Layout>
         <div className="shadow-2 col-start-1 m-8 flex flex-col justify-between gap-5 rounded-[44px] border border-dashed border-[#7B61FF] bg-main bg-cover bg-bottom bg-no-repeat p-5">
           {showCurrentWeather && (
-            <div className="flex flex-1 items-center justify-center">
+            <div className="flex flex-1 justify-center bg-house bg-contain bg-bottom bg-no-repeat pt-24">
               <TodayWeather city={city} />
             </div>
           )}
