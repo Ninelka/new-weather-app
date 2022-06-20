@@ -5,15 +5,15 @@ import { stringToCapitalize } from "../lib/stringToCapitalize";
 
 const WeatherWidget: React.FC<WeatherWidgetProps> = ({ data }) => {
   return (
-    <div className="h-auto w-[22rem] bg-widget bg-contain bg-bottom bg-no-repeat p-5">
-      <div className="flex items-end justify-between">
+    <div className="h-auto w-full rounded-3xl bg-widget bg-cover bg-no-repeat p-5">
+      <div className="mb-auto flex items-center justify-between">
         <h1 className="text-title-large-2 text-dark-primary">
           {data.main.temp.toFixed()}&deg;
         </h1>
         <Icon
           className="shrink-0"
-          width={160}
-          height={160}
+          width={120}
+          height={120}
           path={`assets/images/${data.weather[0].icon}.svg`}
         />
       </div>

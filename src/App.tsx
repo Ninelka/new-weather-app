@@ -51,7 +51,7 @@ function App() {
             </button>
           </div>
         </div>
-        <div className="shadow-2 col-start-3 m-8 overflow-y-auto rounded-[44px] border border-dashed border-[#7B61FF] p-5">
+        <div className="shadow-2 col-start-3 m-8 flex flex-col gap-5 overflow-y-auto rounded-[44px] border border-dashed border-[#7B61FF] p-5">
           {showCurrentWeather &&
             popularCities.map((popularCity) => {
               return (
