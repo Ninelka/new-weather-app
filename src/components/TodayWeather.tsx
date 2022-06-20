@@ -15,7 +15,9 @@ const TodayWeather: React.FC<IQueryVariable> = ({ city }) => {
   return (
     <>
       <QueryResult error={error} loading={loading} data={data}>
-        <CurrentWeatherCommon data={currentWeather} />
+        <div className="flex flex-1 justify-center bg-house bg-contain bg-bottom bg-no-repeat pt-24">
+          <CurrentWeatherCommon data={currentWeather} />
+        </div>
       </QueryResult>
     </>
   );

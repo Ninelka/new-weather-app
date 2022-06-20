@@ -28,11 +28,7 @@ function App() {
     <>
       <Layout>
         <div className="shadow-2 col-start-1 m-8 flex flex-col justify-between gap-5 rounded-[44px] border border-dashed border-[#7B61FF] bg-main bg-cover bg-bottom bg-no-repeat p-5">
-          {showCurrentWeather && (
-            <div className="flex flex-1 justify-center bg-house bg-contain bg-bottom bg-no-repeat pt-24">
-              <TodayWeather city={city} />
-            </div>
-          )}
+          {showCurrentWeather && <TodayWeather city={city} />}
           {showForecast && <WeekWeather city={city} />}
         </div>
         <div className="shadow-2 col-start-2 m-8 rounded-[44px] border border-dashed border-[#7B61FF] p-5">
