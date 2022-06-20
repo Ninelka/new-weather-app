@@ -7,7 +7,11 @@ export default {
 } as ComponentMeta<typeof WeatherWidget>;
 
 const Template: ComponentStory<typeof WeatherWidget> = (args) => {
-  return <WeatherWidget {...args} />;
+  return (
+    <div className="w-1/3">
+      <WeatherWidget {...args} />
+    </div>
+  );
 };
 
 export const Default = Template.bind({});
