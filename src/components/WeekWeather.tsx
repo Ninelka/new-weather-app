@@ -1,4 +1,5 @@
 import React from "react";
+import { Scrollbars } from "rc-scrollbars";
 import { useQuery } from "@apollo/client";
 import { GET_WEEK_FORECAST } from "../queries/queries";
 import QueryResult from "./QueryResult";
@@ -15,20 +16,22 @@ const WeekWeather: React.FC<IQueryVariable> = ({ city }) => {
   return (
     <>
       <QueryResult error={error} loading={loading} data={data}>
-        <div className="flex w-full gap-[20px] overflow-x-auto">
-          {weekWeather &&
-            weekWeather.list.slice(0, 8).map((day: any) => {
-              return (
-                <HourlyForecastItem
-                  key={day.dt.toString()}
-                  date={day.dt_txt}
-                  icon={day.weather[0].icon}
-                  temperature={day.main.temp}
-                  pop={day.pop}
-                />
-              );
-            })}
-        </div>
+        <Scrollbars autoHeight>
+          <div className="flex gap-5 pb-4">
+            {weekWeather &&
+              weekWeather.list.slice(0, 8).map((day: any) => {
+                return (
+                  <HourlyForecastItem
+                    key={day.dt.toString()}
+                    date={day.dt_txt}
+                    icon={day.weather[0].icon}
+                    temperature={day.main.temp}
+                    pop={day.pop}
+                  />
+                );
+              })}
+          </div>
+        </Scrollbars>
       </QueryResult>
     </>
   );

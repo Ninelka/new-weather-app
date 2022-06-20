@@ -1,4 +1,5 @@
 import React from "react";
+import { Scrollbars } from "rc-scrollbars";
 import TodayWeather from "./components/TodayWeather";
 import WeekWeather from "./components/WeekWeather";
 import Layout from "./components/Layout";
@@ -47,13 +48,17 @@ function App() {
             </button>
           </div>
         </div>
-        <div className="shadow-2 col-start-3 m-8 flex flex-col gap-5 overflow-y-auto rounded-[44px] border border-dashed border-[#7B61FF] p-5">
-          {showCurrentWeather &&
-            popularCities.map((popularCity) => {
-              return (
-                <TodayWeatherCities key={popularCity} city={popularCity} />
-              );
-            })}
+        <div className="shadow-2 col-start-3 m-8 overflow-y-auto rounded-[44px] border border-dashed border-[#7B61FF] p-5">
+          <Scrollbars autoHide>
+            <div className="flex flex-col gap-5">
+              {showCurrentWeather &&
+                popularCities.map((popularCity) => {
+                  return (
+                    <TodayWeatherCities key={popularCity} city={popularCity} />
+                  );
+                })}
+            </div>
+          </Scrollbars>
         </div>
       </Layout>
     </>
