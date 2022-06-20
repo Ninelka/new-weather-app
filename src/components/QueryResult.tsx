@@ -1,20 +1,22 @@
 import React, { ReactChild } from "react";
 import { ApolloError } from "@apollo/client";
+import Skeleton from "./Skeleton";
 
 interface QueryResultProps {
   loading: boolean;
-  error?: ApolloError;
   data: object;
+  error?: ApolloError;
   children?: ReactChild;
 }
 
-const QueryResult = ({
+const QueryResult: React.FC<QueryResultProps> = ({
   loading,
   error,
   data,
   children,
-}: QueryResultProps): any => {
-  if (loading) return <p>Loading...</p>;
+}): any => {
+  if (loading) return <Skeleton />;
+
   if (error) return <p>ERROR: {error}</p>;
 
   if (!data) {
