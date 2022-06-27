@@ -48,10 +48,12 @@ const GET_TODAY_WEATHER = gql`
       }
       wind {
         speed
+        deg
       }
       clouds {
         all
       }
+      visibility
     }
   }
 `;
