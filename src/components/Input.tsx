@@ -10,7 +10,9 @@ const Input: React.FC<InputProps> = ({
 }) => {
   return (
     <div className="flex flex-1 flex-col gap-2">
-      <label className="regular-subheadline text-dark-primary">{label}</label>
+      {label && (
+        <label className="regular-subheadline text-dark-primary">{label}</label>
+      )}
       <input
         type="text"
         placeholder={placeholder}
