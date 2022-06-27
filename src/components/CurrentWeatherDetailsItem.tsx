@@ -1,22 +1,35 @@
 import React from "react";
 import { CurrentWeatherDetailsItemProps } from "../interfaces";
+import classNames from "classnames";
 
 const CurrentWeatherDetailsItem: React.FC<CurrentWeatherDetailsItemProps> = ({
   title,
   value,
   description,
+  className,
+  children,
 }) => {
   return (
-    <div className="bg-radial flex h-40 w-40 flex-col justify-between rounded-[22px] border border-solid border-dark-primary border-opacity-30 p-4">
+    <div
+      className={classNames(
+        "bg-radial flex h-40 w-40 flex-col justify-between rounded-[22px] border border-solid border-dark-primary border-opacity-30 p-4",
+        className
+      )}
+    >
       <div className="flex flex-col gap-2">
         <label className="bold-body text-dark-secondary">
           {title.toUpperCase()}
         </label>
-        <h2 className="regular-title-1 text-dark-primary">{value}</h2>
+        {value && (
+          <h2 className="regular-title-1 text-dark-primary">{value}</h2>
+        )}
+        {children}
       </div>
-      <span className="regular-subheadline text-dark-primary">
-        {description}
-      </span>
+      {description && (
+        <span className="regular-subheadline text-dark-primary">
+          {description}
+        </span>
+      )}
     </div>
   );
 };
