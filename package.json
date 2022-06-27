@@ -22,7 +22,8 @@
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "svg-sprite": "svg2sprite ./src/svg-to-sprite ./public/assets/sprite.svg --stripAttrs fill --stripAttrs stroke --stripAttrs id"
   },
   "eslintConfig": {
     "extends": [
