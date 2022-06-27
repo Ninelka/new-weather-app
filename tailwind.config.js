@@ -17,6 +17,7 @@ module.exports = {
         3: "#C427FB",
         4: "#E0D9FF",
       },
+      current: "currentColor",
     },
     background: {
       gradient: {
