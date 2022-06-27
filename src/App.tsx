@@ -10,7 +10,7 @@ function App() {
   const [city, setCity] = React.useState("");
   const [showCurrentWeather, setshowCurrentWeather] = React.useState(false);
   const [showForecast, setShowForecast] = React.useState(false);
-  const popularCities = ["Montreal", "Toronto", "Tokyo", "Moscow", "Berlin"];
+  const popularCities = ["New York", "Toronto", "Tokyo", "Moscow", "Berlin"];
 
   // const getTodayWeather = () => {
   //   setshowCurrentWeather(true);
