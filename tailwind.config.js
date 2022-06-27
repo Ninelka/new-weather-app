@@ -36,6 +36,7 @@ module.exports = {
       widget: "url('/public/assets/images/widget-bg.svg')",
       main: "url('/public/assets/images/main-bg.png')",
       house: "url('/public/assets/images/house.png')",
+      compass: "url('/public/assets/images/compass.svg')",
     },
     fontFamily: {
       text: ["SF-Pro-Text", "sans-serif"],
