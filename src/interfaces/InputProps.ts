@@ -5,5 +5,7 @@ export interface InputProps {
   value?: string;
   label?: string;
   placeholder?: string;
+  icon?: string;
+  iconClassName?: string;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
 }

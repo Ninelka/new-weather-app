@@ -41,3 +41,14 @@ WithPlaceholder.args = {
   onChange: (e) => e.target.value,
 };
 WithPlaceholder.parameters = { ...defaultStoryParams };
+
+export const WithIcon = Template.bind({});
+WithIcon.args = {
+  label: "Some label",
+  placeholder: "Enter value...",
+  icon: "search",
+  iconClassName:
+    "!h-4 !w-4 fill-dark-secondary absolute top-1/2 -translate-y-1/2 left-2",
+  onChange: (e) => e.target.value,
+};
+WithIcon.parameters = { ...defaultStoryParams };
