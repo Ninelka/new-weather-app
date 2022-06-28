@@ -50,8 +50,13 @@ const CurrentWeatherDetails: React.FC<IQueryVariable> = ({ city }) => {
               description={
                 "Sunset: " + dayjs.unix(currentWeather.sys.sunset).format("LT")
               }
+              icon="sunrise"
             />
-            <CurrentWeatherDetailsItem title="Wind" className="relative">
+            <CurrentWeatherDetailsItem
+              title="Wind"
+              className="relative"
+              icon="wind"
+            >
               <div className="absolute bottom-2 left-1/2 h-32 w-32 -translate-x-1/2 bg-compass bg-cover bg-no-repeat">
                 <Icon
                   className="flex h-full w-full origin-center items-center justify-center"
@@ -63,13 +68,26 @@ const CurrentWeatherDetails: React.FC<IQueryVariable> = ({ city }) => {
                 </div>
               </div>
             </CurrentWeatherDetailsItem>
-            <CurrentWeatherDetailsItem title="Feels like" value={feelsLike()} />
-            <CurrentWeatherDetailsItem title="Humidity" value={humidity()} />
+            <CurrentWeatherDetailsItem
+              title="Feels like"
+              value={feelsLike()}
+              icon="thermometer"
+            />
+            <CurrentWeatherDetailsItem
+              title="Humidity"
+              value={humidity()}
+              icon="droplet"
+            />
             <CurrentWeatherDetailsItem
               title="Visibility"
               value={visibility()}
+              icon="eye"
             />
-            <CurrentWeatherDetailsItem title="Pressure" value={pressure()} />
+            <CurrentWeatherDetailsItem
+              title="Pressure"
+              value={pressure()}
+              icon="download-cloud"
+            />
           </div>
         )}
       </QueryResult>

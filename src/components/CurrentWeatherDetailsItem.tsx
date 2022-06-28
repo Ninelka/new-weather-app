@@ -1,12 +1,14 @@
 import React from "react";
 import { CurrentWeatherDetailsItemProps } from "../interfaces";
 import classNames from "classnames";
+import { SpriteIcon } from "./SpriteIcon";
 
 const CurrentWeatherDetailsItem: React.FC<CurrentWeatherDetailsItemProps> = ({
   title,
   value,
   description,
   className,
+  icon,
   children,
 }) => {
   return (
@@ -17,8 +19,11 @@ const CurrentWeatherDetailsItem: React.FC<CurrentWeatherDetailsItemProps> = ({
       )}
     >
       <div className="flex flex-col gap-2">
-        <label className="bold-body text-dark-secondary">
-          {title.toUpperCase()}
+        <label className="bold-body flex items-center gap-1 text-dark-secondary">
+          {icon && (
+            <SpriteIcon icon={icon} className="h-5 w-5 fill-dark-secondary" />
+          )}
+          <span>{title.toUpperCase()}</span>
         </label>
         {value && (
           <h2 className="regular-title-1 text-dark-primary">{value}</h2>

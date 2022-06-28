@@ -24,6 +24,7 @@ export const Default = Template.bind({});
 Default.args = {
   title: "Sunrise",
   value: "20°",
+  icon: "sunrise",
 };
 Default.parameters = { ...defaultStoryParams };
 
@@ -32,5 +33,6 @@ WithDescription.args = {
   title: "Feels like",
   value: "20°",
   description: "Some text",
+  icon: "thermometer",
 };
 WithDescription.parameters = { ...defaultStoryParams };
