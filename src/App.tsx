@@ -54,7 +54,7 @@ function App() {
         </div>
         <div className="shadow-2 col-start-3 m-8 overflow-y-auto rounded-[44px] border border-dashed border-[#7B61FF] p-5">
           <Scrollbars autoHide>
-            <div className="flex flex-col gap-5">
+            <div className="flex h-full flex-col gap-5">
               {showCurrentWeather &&
                 popularCities.map((popularCity) => {
                   return (
