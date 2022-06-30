@@ -1,5 +1,5 @@
 export interface ICurrentWeatherBase {
-  main: string;
+  main?: string;
   description: string;
   icon: string;
 }
