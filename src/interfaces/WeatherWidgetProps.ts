@@ -1,3 +1,5 @@
+import { ICurrentWeatherBase } from "./ICurrentWeatherBase";
+
 export interface WeatherWidgetProps {
   data: {
     name: string;
@@ -9,11 +11,6 @@ export interface WeatherWidgetProps {
       temp_min: number;
       temp_max: number;
     };
-    weather: [
-      {
-        description: string;
-        icon: string;
-      }
-    ];
+    weather: ICurrentWeatherBase[];
   };
 }
