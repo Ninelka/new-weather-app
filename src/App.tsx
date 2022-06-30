@@ -39,7 +39,7 @@ function App() {
               placeholder="Search for a city or airport"
               value={city}
               icon="search"
-              iconClassName="h-4 w-4 fill-dark-secondary absolute top-1/2 -translate-y-1/2 left-2"
+              iconClassName="fill-dark-secondary absolute top-1/2 -translate-y-1/2 left-2"
               onChange={(e) => setCity(e.target.value)}
             />
             <button

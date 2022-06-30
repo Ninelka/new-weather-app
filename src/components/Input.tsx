@@ -12,7 +12,7 @@ const Input: React.FC<InputProps> = ({
   iconClassName,
   onChange,
 }) => {
-  const iconStyles = classNames("h-4 w-4", iconClassName);
+  const iconStyles = classNames("!h-4 !w-4", iconClassName);
   const inputStyles = classNames(
     "bg-input w-full shadow-input regular-body rounded-[10px] p-2 text-dark-primary truncate",
     {
