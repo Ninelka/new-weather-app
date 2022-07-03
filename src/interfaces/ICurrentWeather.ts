@@ -19,8 +19,10 @@ export interface ICurrentWeather {
   };
   wind: {
     speed: number;
+    deg: number;
   };
   clouds: {
     all: string;
   };
+  visibility: number;
 }
