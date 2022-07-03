@@ -1,12 +1,13 @@
-import React from "react";
-import QueryResult from "./QueryResult";
 import { useQuery } from "@apollo/client";
-import { GET_TODAY_WEATHER } from "../queries/queries";
-import { IQueryVariable } from "../interfaces";
-import CurrentWeatherDetailsItem from "./CurrentWeatherDetailsItem";
-import { Icon } from "./Icon";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
+import React from "react";
+
+import { IQueryVariable } from "../interfaces";
+import { GET_TODAY_WEATHER } from "../queries/queries";
+import CurrentWeatherDetailsItem from "./CurrentWeatherDetailsItem";
+import { Icon } from "./Icon";
+import QueryResult from "./QueryResult";
 
 dayjs.extend(localizedFormat);
 

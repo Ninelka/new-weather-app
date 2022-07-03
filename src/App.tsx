@@ -1,11 +1,12 @@
-import React from "react";
 import { Scrollbars } from "rc-scrollbars";
-import TodayWeather from "./components/TodayWeather";
-import WeekWeather from "./components/WeekWeather";
-import Layout from "./components/Layout";
-import Input from "./components/Input";
-import TodayWeatherCities from "./components/TodayWeatherCities";
+import React from "react";
+
 import CurrentWeatherDetails from "./components/CurrentWeatherDetails";
+import Input from "./components/Input";
+import Layout from "./components/Layout";
+import TodayWeather from "./components/TodayWeather";
+import TodayWeatherCities from "./components/TodayWeatherCities";
+import WeekWeather from "./components/WeekWeather";
 
 function App() {
   const [city, setCity] = React.useState("");

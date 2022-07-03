@@ -5,5 +5,4 @@ export type { ICurrentWeatherBase } from "./ICurrentWeatherBase";
 export type { IHourlyForecast } from "./IHourlyForecast";
 export type { IHourlyForecastList } from "./IHourlyForecastList";
 export type { IQueryVariable } from "./IQueryVariable";
-export type { IStore } from "./IStore";
 export type { WeatherWidgetProps } from "./WeatherWidgetProps";

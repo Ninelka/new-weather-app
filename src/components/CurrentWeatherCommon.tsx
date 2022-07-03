@@ -1,4 +1,5 @@
 import React from "react";
+
 import { WeatherWidgetProps } from "../interfaces";
 import { stringToCapitalize } from "../lib/stringToCapitalize";
 
