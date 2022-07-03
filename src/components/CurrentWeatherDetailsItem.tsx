@@ -1,6 +1,7 @@
-import React from "react";
-import { CurrentWeatherDetailsItemProps } from "../interfaces";
 import classNames from "classnames";
+import React from "react";
+
+import { CurrentWeatherDetailsItemProps } from "../interfaces";
 import { SpriteIcon } from "./SpriteIcon";
 
 const CurrentWeatherDetailsItem: React.FC<CurrentWeatherDetailsItemProps> = ({

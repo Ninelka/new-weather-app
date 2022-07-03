@@ -1,8 +1,9 @@
-import React from "react";
 import { useQuery } from "@apollo/client";
+import React from "react";
+
+import { IQueryVariable } from "../interfaces";
 import { GET_TODAY_WEATHER } from "../queries/queries";
 import QueryResult from "./QueryResult";
-import { IQueryVariable } from "../interfaces";
 import WeatherWidget from "./WeatherWidget";
 
 const TodayWeatherCities: React.FC<IQueryVariable> = ({ city }) => {

@@ -1,7 +1,8 @@
+import classNames from "classnames";
 import React from "react";
+
 import { InputProps } from "../interfaces/InputProps";
 import { SpriteIcon } from "./SpriteIcon";
-import classNames from "classnames";
 
 const Input: React.FC<InputProps> = ({
   defaultValue,

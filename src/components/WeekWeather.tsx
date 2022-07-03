@@ -1,10 +1,11 @@
-import React from "react";
-import { Scrollbars } from "rc-scrollbars";
 import { useQuery } from "@apollo/client";
-import { GET_WEEK_FORECAST } from "../queries/queries";
-import QueryResult from "./QueryResult";
+import { Scrollbars } from "rc-scrollbars";
+import React from "react";
+
 import { IHourlyForecastList, IQueryVariable } from "../interfaces";
+import { GET_WEEK_FORECAST } from "../queries/queries";
 import HourlyForecastItem from "./HourlyForecastItem";
+import QueryResult from "./QueryResult";
 
 const WeekWeather: React.FC<IQueryVariable> = ({ city }) => {
   const { loading, error, data } = useQuery(GET_WEEK_FORECAST, {

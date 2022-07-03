@@ -1,5 +1,6 @@
-import React, { ReactChild } from "react";
 import { ApolloError } from "@apollo/client";
+import React, { ReactChild } from "react";
+
 import Skeleton from "./Skeleton";
 
 interface QueryResultProps {
