@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
+
 import CurrentWeatherDetailsItem from "../components/CurrentWeatherDetailsItem";
 
 export default {

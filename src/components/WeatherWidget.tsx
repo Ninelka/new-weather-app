@@ -1,7 +1,8 @@
-import { WeatherWidgetProps } from "../interfaces";
 import React from "react";
-import { Icon } from "./Icon";
+
+import { WeatherWidgetProps } from "../interfaces";
 import { stringToCapitalize } from "../lib/stringToCapitalize";
+import { Icon } from "./Icon";
 
 const WeatherWidget: React.FC<WeatherWidgetProps> = ({ data }) => {
   return (

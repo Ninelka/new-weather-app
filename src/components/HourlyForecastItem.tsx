@@ -1,8 +1,9 @@
+import classNames from "classnames";
+import dayjs from "dayjs";
 import React from "react";
+
 import { HourlyForecastItemProps } from "../interfaces";
 import { Icon } from "./Icon";
-import dayjs from "dayjs";
-import classNames from "classnames";
 
 const HourlyForecastItem: React.FC<HourlyForecastItemProps> = (props) => {
   const { date, icon, pop, temperature, isActive } = props;
