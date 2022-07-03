@@ -1,17 +1,23 @@
-import React from "react";
 import { Scrollbars } from "rc-scrollbars";
-import TodayWeather from "./components/TodayWeather";
-import WeekWeather from "./components/WeekWeather";
-import Layout from "./components/Layout";
-import Input from "./components/Input";
-import TodayWeatherCities from "./components/TodayWeatherCities";
-import CurrentWeatherDetails from "./components/CurrentWeatherDetails";
+import React from "react";
 
-function App() {
+import CurrentWeatherDetails from "./components/CurrentWeatherDetails";
+import Input from "./components/Input";
+import Layout from "./components/Layout";
+import TodayWeather from "./components/TodayWeather";
+import TodayWeatherCities from "./components/TodayWeatherCities";
+import WeekWeather from "./components/WeekWeather";
+import { useWeatherStore } from "./store/useWeatherStore";
+
+export const App: React.FC = () => {
   const [city, setCity] = React.useState("");
-  const [showCurrentWeather, setshowCurrentWeather] = React.useState(false);
+  const [showCurrentWeather, setShowCurrentWeather] = React.useState(false);
   const [showForecast, setShowForecast] = React.useState(false);
   const popularCities = ["New York", "Toronto", "Tokyo", "Moscow", "Berlin"];
+
+  const [currentWeather] = useWeatherStore((state) => [state.currentWeather]);
+
+  const isCurrentWeatherEmpty = Object.keys(currentWeather).length === 0;
 
   // const getTodayWeather = () => {
   //   setshowCurrentWeather(true);
@@ -22,7 +28,7 @@ function App() {
   // };
 
   const getWeather = () => {
-    setshowCurrentWeather(true);
+    setShowCurrentWeather(true);
     setShowForecast(true);
   };
 
@@ -50,7 +56,8 @@ function App() {
               Get weather
             </button>
           </div>
-          {showCurrentWeather && <CurrentWeatherDetails city={city} />}
+          {/* NOTE: This checking is important! Components use data from state*/}
+          {!isCurrentWeatherEmpty && <CurrentWeatherDetails />}
         </div>
         <div className="shadow-2 col-start-3 m-8 overflow-y-auto rounded-[44px] border border-dashed border-[#7B61FF] p-5">
           <Scrollbars autoHide>
@@ -67,6 +74,6 @@ function App() {
       </Layout>
     </>
   );
-}
+};
 
 export default App;

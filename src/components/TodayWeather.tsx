@@ -1,8 +1,9 @@
-import React from "react";
 import { useQuery } from "@apollo/client";
-import { GET_TODAY_WEATHER } from "../queries/queries";
-import QueryResult from "./QueryResult";
+import React, { useEffect } from "react";
+
 import { IQueryVariable } from "../interfaces";
+import { GET_TODAY_WEATHER } from "../queries/queries";
+import { useWeatherStore } from "../store/useWeatherStore";
 import CurrentWeatherCommon from "./CurrentWeatherCommon";
 
 const TodayWeather: React.FC<IQueryVariable> = ({ city }) => {
@@ -10,16 +11,31 @@ const TodayWeather: React.FC<IQueryVariable> = ({ city }) => {
     variables: { city },
   });
 
-  const currentWeather = data?.currentWeather;
+  const [setLoading, setNotLoading, setCurrentWeather] = useWeatherStore(
+    (state) => [state.setLoading, state.setNotLoading, state.setCurrentWeather]
+  );
+
+  useEffect(() => {
+    if (loading) {
+      setLoading();
+    }
+
+    if (data) {
+      setCurrentWeather(data.currentWeather);
+      setNotLoading();
+    }
+  }, [loading, data]);
+
+  if (error) return <p>ERROR: {error}</p>;
+
+  if (!data) {
+    return <p>Nothing to show...</p>;
+  }
 
   return (
-    <>
-      <QueryResult error={error} loading={loading} data={data}>
-        <div className="flex flex-1 justify-center bg-house bg-contain bg-bottom bg-no-repeat pt-24">
-          <CurrentWeatherCommon data={currentWeather} />
-        </div>
-      </QueryResult>
-    </>
+    <div className="flex flex-1 justify-center bg-house bg-contain bg-bottom bg-no-repeat pt-24">
+      <CurrentWeatherCommon />
+    </div>
   );
 };
 export default TodayWeather;
