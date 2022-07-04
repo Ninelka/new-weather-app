@@ -18,10 +18,10 @@ const QueryResult: React.FC<QueryResultProps> = ({
 }): any => {
   if (loading) return <Skeleton />;
 
-  if (error) return <p>ERROR: {error}</p>;
+  if (error) return <p className="text-solid-3">ERROR - {error.message}</p>;
 
   if (!data) {
-    return <p>Nothing to show...</p>;
+    return <p className="text-solid-3">Nothing to show...</p>;
   }
   if (data) {
     return children;
