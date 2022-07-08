@@ -51,7 +51,7 @@ function App() {
               Get weather
             </button>
           </div>
-          {showCurrentWeather && <CurrentWeatherDetails city={city} />}
+          <CurrentWeatherDetails error={error} loading={loading} data={data} />
         </div>
         <div className="shadow-2 col-start-3 m-8 overflow-y-auto rounded-[44px] border border-dashed border-[#7B61FF] p-5">
           <Scrollbars autoHide>
