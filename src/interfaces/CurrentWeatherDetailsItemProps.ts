@@ -4,4 +4,5 @@ export interface CurrentWeatherDetailsItemProps {
   description?: string;
   icon?: string;
   className?: string;
+  children?: JSX.Element;
 }

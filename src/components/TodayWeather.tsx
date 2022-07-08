@@ -1,15 +1,10 @@
-import { useQuery } from "@apollo/client";
 import React from "react";
 
-import { IQueryVariable } from "../interfaces";
-import { GET_TODAY_WEATHER } from "../queries/queries";
 import CurrentWeatherCommon from "./CurrentWeatherCommon";
 import QueryResult from "./QueryResult";
 
-const TodayWeather: React.FC<IQueryVariable> = ({ city }) => {
-  const { loading, error, data } = useQuery(GET_TODAY_WEATHER, {
-    variables: { city },
-  });
+const TodayWeather = ({ ...props }) => {
+  const { error, loading, data } = props;
 
   const currentWeather = data?.currentWeather;
 
