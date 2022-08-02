@@ -52,9 +52,10 @@ function App() {
               onChange={(e) => setCity(e.target.value)}
             />
             <button
+              disabled={city.length === 0}
               type="submit"
               onClick={() => getCity({ variables: { city } })}
-              className="bold-subheadline shadow-1 flex max-h-8 items-center justify-center whitespace-nowrap rounded-[30px] p-4 text-dark-primary"
+              className="bold-subheadline shadow-1 flex max-h-8 items-center justify-center whitespace-nowrap rounded-[30px] p-4 text-dark-primary disabled:cursor-not-allowed disabled:opacity-50"
             >
               Get weather
             </button>
