@@ -19,13 +19,11 @@ function App() {
 
   const [getCity, { loading, error, data }] = useLazyQuery(GET_TODAY_WEATHER);
 
-  // const getTodayWeather = () => {
-  //   setshowCurrentWeather(true);
-  // };
-  //
-  // const getForecast = () => {
-  //   setShowForecast(true);
-  // };
+  React.useEffect(() => {
+    setTimeout(() => {
+      setDebouncedValue(city);
+    }, 1000);
+  }, [city]);
 
   React.useEffect(() => {
     if (data?.currentWeather && weekWeatherLoaded) {
@@ -52,10 +50,12 @@ function App() {
               value={city}
               icon="search"
               iconClassName="fill-dark-secondary absolute top-1/2 -translate-y-1/2 left-2"
-              onChange={(e) => setCity(e.target.value)}
+              onChange={(e) => {
+                setCity(e.target.value);
+              }}
             />
             <button
-              disabled={city.length === 0}
+              disabled={debouncedValue.length === 0}
               type="submit"
               onClick={() => getCity({ variables: { city } })}
               className="bold-subheadline shadow-1 flex max-h-8 items-center justify-center whitespace-nowrap rounded-[30px] p-4 text-dark-primary disabled:cursor-not-allowed disabled:opacity-50"
