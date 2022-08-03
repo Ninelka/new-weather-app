@@ -1,18 +1,29 @@
-import { useQuery } from "@apollo/client";
+import { useLazyQuery } from "@apollo/client";
 import { Scrollbars } from "rc-scrollbars";
-import React from "react";
+import React, { Dispatch, SetStateAction, useEffect } from "react";
 
 import { IHourlyForecastList, IQueryVariable } from "../interfaces";
 import { GET_WEEK_FORECAST } from "../queries/queries";
 import HourlyForecastItem from "./HourlyForecastItem";
 import QueryResult from "./QueryResult";
 
-const WeekWeather: React.FC<IQueryVariable> = ({ city }) => {
-  const { loading, error, data } = useQuery(GET_WEEK_FORECAST, {
-    variables: { city },
-  });
+interface IWeekWeather extends IQueryVariable {
+  isDataLoaded: Dispatch<SetStateAction<boolean>>;
+}
+
+const WeekWeather: React.FC<IWeekWeather> = ({ city, isDataLoaded }) => {
+  const [getWeekWeather, { loading, error, data }] =
+    useLazyQuery(GET_WEEK_FORECAST);
 
   const weekWeather = data?.forecast;
+
+  useEffect(() => {
+    if (city) {
+      getWeekWeather({ variables: { city } }).then(() =>
+        isDataLoaded(Boolean(weekWeather))
+      );
+    }
+  }, [city, weekWeather]);
 
   return (
     <>

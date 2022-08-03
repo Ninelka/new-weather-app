@@ -1,18 +1,20 @@
 import { useLazyQuery } from "@apollo/client";
 import { Scrollbars } from "rc-scrollbars";
-import React, { useEffect } from "react";
+import React from "react";
 
 import CurrentWeatherDetails from "./components/CurrentWeatherDetails";
 import Input from "./components/Input";
 import Layout from "./components/Layout";
 import TodayWeather from "./components/TodayWeather";
 import TodayWeatherCities from "./components/TodayWeatherCities";
+import WeekWeather from "./components/WeekWeather";
 import { GET_TODAY_WEATHER } from "./queries/queries";
 
 function App() {
-  const [city, setCity] = React.useState("");
-  // const [showCurrentWeather, setshowCurrentWeather] = React.useState(false);
-  // const [showForecast, setShowForecast] = React.useState(false);
+  const [city, setCity] = React.useState<string>("");
+  const [debouncedValue, setDebouncedValue] = React.useState<string>("");
+  const [weekWeatherLoaded, setWeekWeatherLoaded] = React.useState(false);
+
   const popularCities = ["New York", "Toronto", "Tokyo", "Moscow", "Berlin"];
 
   const [getCity, { loading, error, data }] = useLazyQuery(GET_TODAY_WEATHER);
@@ -25,22 +27,23 @@ function App() {
   //   setShowForecast(true);
   // };
 
-  useEffect(() => {
-    // THIS CODE MAKE AN ERROR:
-    // After reset city, forecast query doesn't work
-    // and WeekWeather component throws error
-    if (data?.currentWeather) {
+  React.useEffect(() => {
+    if (data?.currentWeather && weekWeatherLoaded) {
       setCity("");
     }
-    console.log(data?.currentWeather);
-  }, [data?.currentWeather]);
+  }, [data?.currentWeather, weekWeatherLoaded]);
 
   return (
     <>
       <Layout>
         <div className="shadow-2 col-start-1 m-8 flex flex-col justify-between gap-5 rounded-[44px] border border-dashed border-[#7B61FF] bg-main bg-cover bg-bottom bg-no-repeat p-5">
           <TodayWeather error={error} loading={loading} data={data} />
-          {/* {showForecast && <WeekWeather city={city} />} */}
+          {data && (
+            <WeekWeather
+              city={debouncedValue}
+              isDataLoaded={setWeekWeatherLoaded}
+            />
+          )}
         </div>
         <div className="shadow-2 col-start-2 m-8 flex flex-col gap-y-5 rounded-[44px] border border-dashed border-[#7B61FF] p-5">
           <div className="flex justify-between gap-6">
