@@ -20,9 +20,13 @@ function App() {
   const [getCity, { loading, error, data }] = useLazyQuery(GET_TODAY_WEATHER);
 
   React.useEffect(() => {
-    setTimeout(() => {
+    const debounce = setTimeout(() => {
       setDebouncedValue(city);
     }, 1000);
+
+    return () => {
+      clearInterval(debounce);
+    };
   }, [city]);
 
   React.useEffect(() => {
