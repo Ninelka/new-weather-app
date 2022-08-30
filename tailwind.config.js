@@ -18,6 +18,8 @@ module.exports = {
         4: "#E0D9FF",
       },
     },
+
+    // TODO: Check is it work?
     background: {
       gradient: {
         linear: {
@@ -25,6 +27,7 @@ module.exports = {
           2: "linear-gradient(90deg, #5936B4 0%, #362A84 103.55%)",
           3: "linear-gradient(90deg, #427BD1 1.95%, #C159EC 101.56%)",
           4: "linear-gradient(180deg, #AEC9FF 0%, #AEC9FF 54.51%, #083072 54.52%)",
+          5: "linear-gradient(180deg, #FFFFFF 56.39%, #FFFFFF 78.19%, #FFFFFF 95.77%)",
         },
         radial:
           "radial-gradient(73.23% 106% at 34.94% 108.33%, #F7CBFD 0%, #7758D1 100%)",
@@ -63,6 +66,9 @@ module.exports = {
       "title-large-3": ["34px", "41px"],
       "title-large-2": ["64px", "41px"],
       "title-large-1": ["96px", "70px"],
+    },
+    boxShadow: {
+      xs: "0px 1px 0px rgba(0, 0, 0, 0.2)",
     },
     extend: {},
   },
