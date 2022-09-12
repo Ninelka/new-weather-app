@@ -25,5 +25,5 @@
       "simple-import-sort/exports": "error",
       "simple-import-sort/imports": "error"
     },
-    "ignorePatterns": ["src/**/*.test.ts"]
+    "ignorePatterns": ["src/**/*.test.ts", "postcss.config.js", "tailwind.config.js"]
 }
