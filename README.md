@@ -8,7 +8,7 @@
 
 This is my first personal project with GraphQL.
 
-I also made simple graphQL server for this project and deployed it by [heroku](https://ninel-weather-app-server.herokuapp.com/)
+I also made simple graphQL server for this project and deployed it by [railway](https://weather-app-server-production.up.railway.app/)
 
 Demo: [link](https://stunning-vacherin-9a7e3c.netlify.app/) :point_left:
 
