@@ -7,7 +7,9 @@ import ReactDOM from "react-dom";
 import App from "./App";
 
 const client = new ApolloClient({
-  uri: "https://ninel-weather-app-server.herokuapp.com/",
+  // Heroku isn't free anymore
+  // uri: "https://ninel-weather-app-server.herokuapp.com/",
+  uri: "https://weather-app-server-production.up.railway.app/",
   cache: new InMemoryCache(),
 });
 
